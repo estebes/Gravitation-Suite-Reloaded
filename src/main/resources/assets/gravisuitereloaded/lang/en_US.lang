@@ -1,0 +1,19 @@
+# Tools
+item.ItemToolTheThingamabob.name=Vajra
+item.ItemMiningToolBigMiningDrill.name=Big Mining Drill
+item.ItemToolMOAT=MOAT
+
+# Weapons
+item.ItemWeaponQuantumSaber.name=Quantum Saber
+
+# Armor
+item.ItemArmorLappack.name=Lappack
+item.ItemArmorQuantumLappack.name=Quantum Lappack
+
+# Misc
+item.ItemMiscQuantumCircuit.name=Quantum Circuit
+
+# Tooltips
+tooltip.tool.PowerTier=Power Tier:
+tooltip.tool.VajraDescription=Right click to silk touch a block
+tooltip.tool.QuantumSaberDescription=Deals void damage when active
