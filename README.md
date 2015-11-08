@@ -1,2 +1,2 @@
 # Gravitation-Suite-Reloaded
-Reviving Gravitation Suite
+Reviving Graviation Suite
