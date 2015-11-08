@@ -13,6 +13,7 @@ public class Reference {
     public static final String THE_THINGAMABOB_NAME = "ItemToolTheThingamabob";
     public static final String BIG_MINING_DRILL_NAME = "ItemToolBigMiningDrill";
     public static final String BIG_DIAMOND_DRILL_NAME = "ItemToolBigDiamondDrill";
+    public static final String BIG_IRIDIUM_DRILL_NAME = "ItemToolBigIridiumDrill";
 
     // Weapons
     public static final String QUANTUM_SABER_NAME = "ItemWeaponQuantumSaber";

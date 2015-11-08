@@ -20,14 +20,21 @@ public class RecipeInit {
                 " B ", "DTD", " B ",
                 'B', copyWithWildCard(new ItemStack(IC2Items.getItem("advBattery").getItem())),
                 'D', copyWithWildCard(new ItemStack(IC2Items.getItem("miningDrill").getItem())),
-                'T', new ItemStack(IC2Items.getItem("lvTransformer").getItem(), 1, 3)
+                'T', new ItemStack(IC2Items.getItem("lvTransformer").getItem(), 1, 4)
         );
 
         Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemToolBigDiamondDrill, 1),
                 " B ", "DTD", " B ",
                 'B', copyWithWildCard(new ItemStack(IC2Items.getItem("advBattery").getItem())),
                 'D', copyWithWildCard(new ItemStack(IC2Items.getItem("diamondDrill").getItem())),
-                'T', new ItemStack(IC2Items.getItem("lvTransformer").getItem(), 1, 3)
+                'T', new ItemStack(IC2Items.getItem("lvTransformer").getItem(), 1, 4)
+        );
+
+        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemToolBigIridiumDrill, 1),
+                " C ", "DTD", " C ",
+                'C', copyWithWildCard(new ItemStack(IC2Items.getItem("energyCrystal").getItem())),
+                'D', copyWithWildCard(new ItemStack(IC2Items.getItem("iridiumDrill").getItem())),
+                'T', new ItemStack(IC2Items.getItem("lvTransformer").getItem(), 1, 5)
         );
 
         // Weapons

@@ -4,6 +4,7 @@ import com.estebes.gravisuitereloaded.item.armor.ItemArmorLappack;
 import com.estebes.gravisuitereloaded.item.armor.ItemArmorQuantumLappack;
 import com.estebes.gravisuitereloaded.item.misc.ItemMisc;
 import com.estebes.gravisuitereloaded.item.tool.ItemToolBigDiamondDrill;
+import com.estebes.gravisuitereloaded.item.tool.ItemToolBigIridiumDrill;
 import com.estebes.gravisuitereloaded.item.tool.ItemToolBigMiningDrill;
 import com.estebes.gravisuitereloaded.item.tool.ItemToolTheThingamabob;
 import com.estebes.gravisuitereloaded.item.weapon.ItemWeaponQuantumSaber;
@@ -18,6 +19,8 @@ public class ItemInit {
             2, 2.7E5D, 9.0E2D, false, 5.0E2D);
     public static final ItemToolBigDiamondDrill itemToolBigDiamondDrill = new ItemToolBigDiamondDrill(Reference.BIG_DIAMOND_DRILL_NAME,
             2, 2.7E5D, 9.0E2D, false, 8.0E2D);
+    public static final ItemToolBigIridiumDrill itemToolBigIridiumDrill = new ItemToolBigIridiumDrill(Reference.BIG_IRIDIUM_DRILL_NAME,
+            3, 2.7E6D, 9.0E3D, false, 1.2E3D);
 
     // Weapons
     public static final ItemWeaponQuantumSaber itemWeaponQuantumSaber = new ItemWeaponQuantumSaber();
@@ -34,6 +37,7 @@ public class ItemInit {
         GameRegistry.registerItem(itemToolTheThingamabob, Reference.THE_THINGAMABOB_NAME);
         GameRegistry.registerItem(itemToolBigMiningDrill, Reference.BIG_MINING_DRILL_NAME);
         GameRegistry.registerItem(itemToolBigDiamondDrill, Reference.BIG_DIAMOND_DRILL_NAME);
+        GameRegistry.registerItem(itemToolBigIridiumDrill, Reference.BIG_IRIDIUM_DRILL_NAME);
 
         // Weapons
         GameRegistry.registerItem(itemWeaponQuantumSaber, Reference.QUANTUM_SABER_NAME);
