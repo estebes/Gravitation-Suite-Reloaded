@@ -2,7 +2,6 @@ package com.estebes.gravisuitereloaded.item.tool;
 
 import com.estebes.gravisuitereloaded.item.ItemElectricTool;
 import com.estebes.gravisuitereloaded.util.Util;
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.ElectricItem;
@@ -11,7 +10,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
@@ -24,7 +22,11 @@ import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
+import java.util.Map;
 
 public class ItemToolTheThingamabob extends ItemElectricTool {
     private double operationCost;
@@ -35,6 +37,7 @@ public class ItemToolTheThingamabob extends ItemElectricTool {
     }
 
     // Item methods
+    @Override
     public int getHarvestLevel(ItemStack itemStack, String toolClass) {
         return this.toolMaterial.getHarvestLevel();
     }
@@ -50,9 +53,9 @@ public class ItemToolTheThingamabob extends ItemElectricTool {
         int metaData = world.getBlockMetadata(x, y, z);
         if ((block.getBlockHardness(world, x, y, z) >= 0.0D)) {
             if (ElectricItem.manager.canUse(itemStack, this.operationCost)) {
-                if (!FMLCommonHandler.instance().getEffectiveSide().isClient()) {
+                if (!world.isRemote) {
                     if (block.canSilkHarvest(world, entityPlayer, x, y, z, metaData)) {
-                        ArrayList<ItemStack> items = new ArrayList();
+                        ArrayList<ItemStack> items = new ArrayList<ItemStack>();
                         if(Item.getItemFromBlock(block) != null) {
                             ItemStack drop = new ItemStack(getItemFromBlock(block), 1, metaData);
                             items.add(drop);
@@ -116,7 +119,7 @@ public class ItemToolTheThingamabob extends ItemElectricTool {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item item, CreativeTabs tabs, List itemList) {
-        Map<Integer, Integer> enchantmentMap = new HashMap();
+        Map<Integer, Integer> enchantmentMap = new HashMap<Integer, Integer>();
         enchantmentMap.put(Integer.valueOf(Enchantment.fortune.effectId), Integer.valueOf(3));
 
         // Charged Item

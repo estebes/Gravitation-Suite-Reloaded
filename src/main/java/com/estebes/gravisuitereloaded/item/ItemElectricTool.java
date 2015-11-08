@@ -7,8 +7,11 @@ import ic2.api.item.ElectricItem;
 import ic2.api.item.IElectricItem;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTool;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
 
@@ -16,14 +19,17 @@ import java.util.HashSet;
 import java.util.List;
 
 public class ItemElectricTool extends ItemTool implements IElectricItem {
-    private String name;
+    // Vars
+    protected String name;
+    protected double operationCost;
 
-    // IElectricItem
-    private int energyTier;
-    private double maxCharge;
-    private double transferLimit;
-    private boolean providesEnergy;
+    // -------------- IElectricItem vars -------------- //
+    protected int energyTier;
+    protected double maxCharge;
+    protected double transferLimit;
+    protected boolean providesEnergy;
 
+    // -------------- Constructor -------------- //
     public ItemElectricTool(String name, int energyTier, double maxCharge, double transferLimit, boolean providesEnergy) {
         super(0.0F, ToolMaterial.EMERALD, new HashSet());
 
@@ -46,15 +52,27 @@ public class ItemElectricTool extends ItemTool implements IElectricItem {
     }
 
     @Override
+    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
+        return false;
+    }
+
+    @Override
+    public boolean isRepairable() {
+        return false;
+    }
+
+    @Override
     public boolean getIsRepairable(ItemStack itemStack1, ItemStack itemStack2) {
         return false;
     }
 
     @Override
-    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
-        return false;
+    public boolean hitEntity(ItemStack itemstack, EntityLivingBase entityliving, EntityLivingBase entityliving1) {
+        return true;
     }
 
+    // -------------- Client item methods -------------- //
+    @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item item, CreativeTabs tabs, List itemList) {
         // Charged Item
@@ -67,26 +85,31 @@ public class ItemElectricTool extends ItemTool implements IElectricItem {
         itemList.add(depletedItem);
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
         this.itemIcon = iconRegister.registerIcon(Reference.LOWERCASE_MOD_ID + ":" + this.name);
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(ItemStack itemStack, int pass) {
         return this.itemIcon;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public boolean requiresMultipleRenderPasses() {
         return true;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
-    public EnumRarity getRarity(ItemStack stack) {
-        return EnumRarity.rare;
+    public boolean hasEffect(ItemStack itemStack, int pass) {
+        return false;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemStack, EntityPlayer entityPlayer, List list, boolean var) {
         list.add(StatCollector.translateToLocal("tooltip.tool.PowerTier") + " " + this.energyTier);

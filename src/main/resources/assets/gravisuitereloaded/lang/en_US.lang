@@ -1,6 +1,7 @@
 # Tools
 item.ItemToolTheThingamabob.name=Vajra
-item.ItemMiningToolBigMiningDrill.name=Big Mining Drill
+item.ItemToolBigMiningDrill.name=Big Mining Drill
+item.ItemToolBigDiamondDrill.name=Big Diamond Drill
 item.ItemToolMOAT=MOAT
 
 # Weapons

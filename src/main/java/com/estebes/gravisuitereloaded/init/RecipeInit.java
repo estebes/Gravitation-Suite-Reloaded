@@ -16,6 +16,20 @@ public class RecipeInit {
                 'L', copyWithWildCard(new ItemStack(IC2Items.getItem("lapotronCrystal").getItem()))
         );
 
+        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemToolBigMiningDrill, 1),
+                " B ", "DTD", " B ",
+                'B', copyWithWildCard(new ItemStack(IC2Items.getItem("advBattery").getItem())),
+                'D', copyWithWildCard(new ItemStack(IC2Items.getItem("miningDrill").getItem())),
+                'T', new ItemStack(IC2Items.getItem("lvTransformer").getItem(), 1, 3)
+        );
+
+        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemToolBigDiamondDrill, 1),
+                " B ", "DTD", " B ",
+                'B', copyWithWildCard(new ItemStack(IC2Items.getItem("advBattery").getItem())),
+                'D', copyWithWildCard(new ItemStack(IC2Items.getItem("diamondDrill").getItem())),
+                'T', new ItemStack(IC2Items.getItem("lvTransformer").getItem(), 1, 3)
+        );
+
         // Weapons
         Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemWeaponQuantumSaber, 1),
                 "IA ", "IN ", "ILI",
