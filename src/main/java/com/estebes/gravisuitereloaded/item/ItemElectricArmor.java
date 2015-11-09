@@ -28,12 +28,18 @@ public class ItemElectricArmor extends ItemArmor implements IElectricItem, IMeta
     private String name;
 
     // IElectricItem
-    private int energyTier;
-    private double maxCharge;
-    private double transferLimit;
-    private boolean providesEnergy;
+    protected int energyTier;
+    protected double maxCharge;
+    protected double transferLimit;
+    protected boolean providesEnergy;
 
-    public ItemElectricArmor(String name, int energyTier, double maxCharge, double transferLimit, boolean providesEnergy, ArmorMaterial armorMaterial) {
+    // ISpecialArmor
+    protected int energyPerDamage;
+    protected double damageAbsorptionRatio;
+    protected double baseAbsorptionRatio;
+
+    public ItemElectricArmor(String name, int energyTier, double maxCharge, double transferLimit, boolean providesEnergy,
+                             int energyPerDamage, double damageAbsorptionRatio, double baseAbsorptionRatio, ArmorMaterial armorMaterial) {
         super(armorMaterial, 0, 1);
 
         this.name = name;
@@ -41,6 +47,9 @@ public class ItemElectricArmor extends ItemArmor implements IElectricItem, IMeta
         this.maxCharge = maxCharge;
         this.transferLimit = transferLimit;
         this.providesEnergy = providesEnergy;
+        this.energyPerDamage = energyPerDamage;
+        this.damageAbsorptionRatio = damageAbsorptionRatio;
+        this.baseAbsorptionRatio = baseAbsorptionRatio;
 
         setUnlocalizedName(this.name);
         setMaxDamage(27);
@@ -143,12 +152,11 @@ public class ItemElectricArmor extends ItemArmor implements IElectricItem, IMeta
         if (source.isUnblockable()) {
             return new ISpecialArmor.ArmorProperties(0, 0.0D, 0);
         }
-        double absorptionRatio = 0;//getBaseAbsorptionRatio() * getDamageAbsorptionRatio();
-        int energyPerDamage = 0;//getEnergyPerDamage();
+        double absorptionRatio = this.baseAbsorptionRatio * this.damageAbsorptionRatio;
 
         int damageLimit = Integer.MAX_VALUE;
-        if (energyPerDamage > 0) {
-            damageLimit = (int)Math.min(damageLimit, 25.0D * ElectricItem.manager.getCharge(armor) / energyPerDamage);
+        if (this.energyPerDamage > 0) {
+            damageLimit = (int)Math.min(damageLimit, 25.0D * ElectricItem.manager.getCharge(armor) / this.energyPerDamage);
         }
         return new ISpecialArmor.ArmorProperties(0, absorptionRatio, damageLimit);
     }
@@ -156,14 +164,14 @@ public class ItemElectricArmor extends ItemArmor implements IElectricItem, IMeta
     @Override
     public int getArmorDisplay(EntityPlayer player, ItemStack armor, int slot) {
         if (ElectricItem.manager.getCharge(armor) >= 0) {
-            return (int)Math.round(20.0D * 0);
+            return (int)Math.round(20.0D * this.baseAbsorptionRatio * this.damageAbsorptionRatio);
         }
         return 0;
     }
 
     @Override
-    public void damageArmor(EntityLivingBase entity, ItemStack stack, DamageSource source, int damage, int slot) {
-        ElectricItem.manager.discharge(stack, damage * 0, Integer.MAX_VALUE, true, false, false);
+    public void damageArmor(EntityLivingBase entity, ItemStack itemStack, DamageSource source, int damage, int slot) {
+        ElectricItem.manager.discharge(itemStack, damage * this.energyPerDamage, Integer.MAX_VALUE, true, false, false);
     }
 
     // -------------- IMetalArmor implementation -------------- //

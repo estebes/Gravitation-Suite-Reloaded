@@ -11,6 +11,8 @@ item.ItemWeaponQuantumSaber.name=Quantum Saber
 # Armor
 item.ItemArmorLappack.name=Lappack
 item.ItemArmorQuantumLappack.name=Quantum Lappack
+item.ItemArmorAdvancedJetpack.name=Advanced Jetpack
+item.ItemArmorAdvancedNanoChestplate.name=Advanced Nano Chestplate
 
 # Misc
 item.ItemMiscQuantumCircuit.name=Quantum Circuit

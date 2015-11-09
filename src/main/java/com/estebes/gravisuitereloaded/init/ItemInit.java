@@ -1,5 +1,7 @@
 package com.estebes.gravisuitereloaded.init;
 
+import com.estebes.gravisuitereloaded.item.armor.ItemArmorAdvancedJetpack;
+import com.estebes.gravisuitereloaded.item.armor.ItemArmorAdvancedNanoChestplate;
 import com.estebes.gravisuitereloaded.item.armor.ItemArmorLappack;
 import com.estebes.gravisuitereloaded.item.armor.ItemArmorQuantumLappack;
 import com.estebes.gravisuitereloaded.item.misc.ItemMisc;
@@ -28,6 +30,8 @@ public class ItemInit {
     // Armor
     public static final ItemArmorLappack itemArmorLappack = new ItemArmorLappack();
     public static final ItemArmorQuantumLappack itemArmorQuantumLappack = new ItemArmorQuantumLappack();
+    public static final ItemArmorAdvancedJetpack itemArmorAdvancedJetpack = new ItemArmorAdvancedJetpack();
+    public static final ItemArmorAdvancedNanoChestplate itemArmorAdvancedNanoChestplate = new ItemArmorAdvancedNanoChestplate();
 
     // Misc
     public static final ItemMisc itemMiscQuantumCircuit = new ItemMisc(Reference.QUANTUM_CIRCUIT_NAME, Reference.QUANTUM_CIRCUIT_STACKSIZE);
@@ -45,6 +49,8 @@ public class ItemInit {
         // Armor
         GameRegistry.registerItem(itemArmorLappack, Reference.LAPPACK_NAME);
         GameRegistry.registerItem(itemArmorQuantumLappack, Reference.QUANTUM_LAPPACK_NAME);
+        GameRegistry.registerItem(itemArmorAdvancedJetpack, Reference.ADVANCED_JETPACK_NAME);
+        GameRegistry.registerItem(itemArmorAdvancedNanoChestplate, Reference.ADVANCED_NANO_CHESTPLATE_NAME);
 
         // Misc
         GameRegistry.registerItem(itemMiscQuantumCircuit, Reference.QUANTUM_CIRCUIT_NAME);
