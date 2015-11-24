@@ -17,8 +17,8 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.7.10-0.7"
-group= "com.estebes.gravisuitereloaded" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+version = "1.7.10-0.9"
+group= "com.estebes.gravisuitereloaded"
 archivesBaseName = "GraviSuite_Reloaded"
 
 minecraft {
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    compile 'net.industrial-craft:industrialcraft-2:2.2.791-experimental:api'
+    compile 'net.industrial-craft:industrialcraft-2:2.2.793-experimental:api'
 }
 
 processResources

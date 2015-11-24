@@ -1,11 +1,8 @@
 package com.estebes.gravisuitereloaded.item;
 
-import com.estebes.gravisuitereloaded.item.ItemElectricArmor;
 import com.estebes.gravisuitereloaded.util.Util;
 import cpw.mods.fml.common.ObfuscationReflectionHelper;
-import ic2.api.info.Info;
 import ic2.api.item.ElectricItem;
-import ic2.api.util.IKeyboard;
 import ic2.api.util.Keys;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;

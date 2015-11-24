@@ -41,6 +41,15 @@ public class RecipeInit {
                 'T', new ItemStack(IC2Items.getItem("lvTransformer").getItem(), 1, 5)
         );
 
+        // The Chopper
+        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemToolTheChopper, 1),
+                " D ", "DCD", "ABA",
+                'D', new ItemStack(Items.diamond),
+                'C', copyWithWildCard(new ItemStack(IC2Items.getItem("energyCrystal").getItem())),
+                'A', new ItemStack(IC2Items.getItem("advancedAlloy").getItem()),
+                'B', copyWithWildCard(new ItemStack(IC2Items.getItem("advBattery").getItem()))
+        );
+
         // Weapons
         // Quantum Saber
         Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemWeaponQuantumSaber, 1),
