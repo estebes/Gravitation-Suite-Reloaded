@@ -94,7 +94,6 @@ public class ItemToolTheChopper extends ItemElectricTool {
                             float localHardness = localBlock == null ? Float.MAX_VALUE : localBlock.getBlockHardness(world, xPos, yPos, zPos);
 
                             if (!(localHardness < 0)) {
-                                // send blockbreak event
                                 BlockEvent.BreakEvent event = new BlockEvent.BreakEvent(x, y, z, world, localBlock, localMeta, player);
                                 MinecraftForge.EVENT_BUS.post(event);
 

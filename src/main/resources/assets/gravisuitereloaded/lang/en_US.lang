@@ -4,6 +4,7 @@ item.ItemToolBigMiningDrill.name=Big Mining Drill
 item.ItemToolBigDiamondDrill.name=Big Diamond Drill
 item.ItemToolBigIridiumDrill.name=Big Iridium Drill
 item.ItemToolMOAT=MOAT
+item.ItemToolTheChopper.name=The Chopper
 
 # Weapons
 item.ItemWeaponQuantumSaber.name=Quantum Saber
