@@ -15,6 +15,9 @@ item.ItemArmorQuantumLappack.name=Quantum Lappack
 item.ItemArmorAdvancedJetpack.name=Advanced Jetpack
 item.ItemArmorAdvancedNanoChestplate.name=Advanced Nano Chestplate
 
+# Resource
+item.ItemCuttingBladeIridium.name=Block Cutting Blade (Iridium)
+
 # Misc
 item.ItemMiscQuantumCircuit.name=Quantum Circuit
 
@@ -22,3 +25,6 @@ item.ItemMiscQuantumCircuit.name=Quantum Circuit
 tooltip.tool.PowerTier=Power Tier:
 tooltip.tool.VajraDescription=Right click to silk touch a block
 tooltip.tool.QuantumSaberDescription=Deals void damage when active
+
+tooltip.item.CuttingBladeDescription=Cuts materials softer than
+tooltip.item.CuttingBladeHardness=Hardness:
