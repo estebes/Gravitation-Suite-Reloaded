@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.7.10-0.9.1"
+version = "1.7.10-special"
 group= "com.estebes.gravisuitereloaded"
 archivesBaseName = "GraviSuite_Reloaded"
 
@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    compile 'net.industrial-craft:industrialcraft-2:2.2.793-experimental:api'
+    compile 'net.industrial-craft:industrialcraft-2:2.2.815-experimental:api'
 }
 
 processResources
