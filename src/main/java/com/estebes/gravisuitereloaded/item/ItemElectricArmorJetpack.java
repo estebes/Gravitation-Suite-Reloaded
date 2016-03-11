@@ -137,6 +137,7 @@ public class ItemElectricArmorJetpack extends ItemElectricArmor {
         if (!(player instanceof EntityPlayerMP)) {
             return;
         }
+
         ObfuscationReflectionHelper.setPrivateValue(NetHandlerPlayServer.class, ((EntityPlayerMP) player).playerNetServerHandler,
                 Integer.valueOf(0), new String[]{"field_147365_f", "floatingTickCount"});
     }

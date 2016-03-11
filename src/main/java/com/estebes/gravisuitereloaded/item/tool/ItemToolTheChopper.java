@@ -4,6 +4,7 @@ import com.estebes.gravisuitereloaded.item.ItemElectricTool;
 import com.estebes.gravisuitereloaded.reference.Reference;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import com.google.common.eventbus.Subscribe;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import ic2.api.item.ElectricItem;
@@ -135,7 +136,7 @@ public class ItemToolTheChopper extends ItemElectricTool {
         return true;
     }
 
-    @SubscribeEvent
+    @Subscribe
     public void onEntityInteract(EntityInteractEvent event)
     {
         if (FMLCommonHandler.instance().getEffectiveSide().isClient()) {

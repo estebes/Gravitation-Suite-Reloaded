@@ -31,7 +31,7 @@ public class ItemElectricTool extends ItemTool implements IElectricItem {
 
     // -------------- Constructor -------------- //
     public ItemElectricTool(String name, int energyTier, double maxCharge, double transferLimit, boolean providesEnergy) {
-        super(0.0F, ToolMaterial.EMERALD, new HashSet());
+        super(0.0F, ToolMaterial.IRON, new HashSet());
 
         this.name = name;
         this.energyTier = energyTier;

@@ -1,6 +1,8 @@
 package com.estebes.gravisuitereloaded.item;
 
 import com.estebes.gravisuitereloaded.reference.Reference;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.item.ElectricItem;
@@ -20,6 +22,9 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.ISpecialArmor;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 import java.util.List;
 import java.util.Random;
@@ -55,6 +60,8 @@ public class ItemElectricArmor extends ItemArmor implements IElectricItem, IMeta
         setMaxDamage(27);
         setMaxStackSize(1);
         setNoRepair();
+
+		MinecraftForge.EVENT_BUS.register(this);
     }
 
     // -------------- Item methods -------------- //
@@ -204,4 +211,25 @@ public class ItemElectricArmor extends ItemArmor implements IElectricItem, IMeta
         }
         return stack.attemptDamageItem(damage, new Random());
     }
+
+    @SubscribeEvent
+	public void onPlayerHurt(LivingAttackEvent event) {
+		if(FMLCommonHandler.instance().getEffectiveSide().isClient()) {
+			return;
+		}
+
+		if(!(event.entity instanceof EntityPlayer)) {
+			return;
+		}
+
+		EntityPlayer player = (EntityPlayer)event.entity;
+		ItemStack itemstack = player.inventory.armorItemInSlot(2);
+		if(itemstack == null || event.source.equals(DamageSource.outOfWorld)) {
+			event.setCanceled(false);
+			return;
+		}
+		if(ElectricItem.manager.canUse(itemstack, 1000.0D)) {
+			event.setCanceled(true);
+		}
+	}
 }

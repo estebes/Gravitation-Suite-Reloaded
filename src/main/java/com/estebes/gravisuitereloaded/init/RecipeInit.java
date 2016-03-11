@@ -1,122 +1,136 @@
 package com.estebes.gravisuitereloaded.init;
 
 import ic2.api.item.IC2Items;
+import ic2.api.recipe.RecipeInputItemStack;
 import ic2.api.recipe.Recipes;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RecipeInit {
     public static void init() {
         // Tools
-        // Vajra
-        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemToolTheThingamabob, 1),
-                "ICI", "CDC", "ILI",
-                'I', new ItemStack(IC2Items.getItem("iridiumPlate").getItem()),
-                'C', new ItemStack(ItemInit.itemMiscQuantumCircuit),
-                'D', copyWithWildCard(new ItemStack(IC2Items.getItem("iridiumDrill").getItem())),
-                'L', copyWithWildCard(new ItemStack(IC2Items.getItem("lapotronCrystal").getItem()))
+		// Big Mining Drill
+        /*Recipes.advRecipes.addRecipe(
+				new ItemStack(ItemInit.itemArmorAdvancedJetpack, 1),
+                "OJO", "CDC", " A ",
+                'O', IC2Items.getItem("overclockerUpgrade").copy(),
+                'B', IC2Items.getItem("advironblockcuttingblade").copy(),
+                'C', IC2Items.getItem("electronicCircuit").copy(),
+				'J', copyWithWildCard(IC2Items.getItem("electricJetpack").copy()),
+                'A', copyWithWildCard(IC2Items.getItem("advBattery").copy())
         );
 
-        // Big Mining Drill
-        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemToolBigMiningDrill, 1),
-                " B ", "DTD", " B ",
-                'B', copyWithWildCard(new ItemStack(IC2Items.getItem("advBattery").getItem())),
-                'D', copyWithWildCard(new ItemStack(IC2Items.getItem("miningDrill").getItem())),
-                'T', new ItemStack(IC2Items.getItem("lvTransformer").getItem(), 1, 4)
-        );
+		// Big Diamond Drill
+		Recipes.advRecipes.addRecipe(
+				new ItemStack(ItemInit.itemArmorAdvancedNanoChestplate, 1),
+				"OBO", "CDC", " C ",
+				'O', new ItemStack(IC2Items.getItem("overclockerUpgrade").getItem()),
+				'B', new ItemStack(IC2Items.getItem("diamondblockcuttingblade").getItem()),
+				'C', new ItemStack(IC2Items.getItem("advancedCircuit").getItem()),
+				'D', copyWithWildCard(new ItemStack(IC2Items.getItem("diamondDrill").getItem())),
+				'E', copyWithWildCard(new ItemStack(IC2Items.getItem("energyCrystal").getItem()))
+		);*/
 
-        // Big Diamond Drill
-        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemToolBigDiamondDrill, 1),
-                " B ", "DTD", " B ",
-                'B', copyWithWildCard(new ItemStack(IC2Items.getItem("advBattery").getItem())),
-                'D', copyWithWildCard(new ItemStack(IC2Items.getItem("diamondDrill").getItem())),
-                'T', new ItemStack(IC2Items.getItem("lvTransformer").getItem(), 1, 4)
-        );
+		/*// Big Iridium Drill
+		Recipes.advRecipes.addRecipe(
+				new ItemStack(ItemInit.itemArmorAdvancedJetpack, 1),
+				"OBO", "CDC", " L ",
+				'O', new ItemStack(IC2Items.getItem("overclockerUpgrade").getItem()),
+				'B', new ItemStack(IC2Items.getItem("overclockerUpgrade").getItem()),
+				'C', new ItemStack(IC2Items.getItem("overclockerUpgrade").getItem()),
+				'D', copyWithWildCard(new ItemStack(IC2Items.getItem("iridiumDrill").getItem())),
+				'L', copyWithWildCard(new ItemStack(IC2Items.getItem("lapotronCrystal").getItem()))
+		);
 
-        // Big Iridium Drill
-        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemToolBigIridiumDrill, 1),
-                " C ", "DTD", " C ",
-                'C', copyWithWildCard(new ItemStack(IC2Items.getItem("energyCrystal").getItem())),
-                'D', copyWithWildCard(new ItemStack(IC2Items.getItem("iridiumDrill").getItem())),
-                'T', new ItemStack(IC2Items.getItem("lvTransformer").getItem(), 1, 5)
-        );
+		// Vajra
 
-        // The Chopper
-        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemToolTheChopper, 1),
-                " D ", "DCD", "ABA",
-                'D', new ItemStack(Items.diamond),
-                'C', copyWithWildCard(new ItemStack(IC2Items.getItem("energyCrystal").getItem())),
-                'A', new ItemStack(IC2Items.getItem("advancedAlloy").getItem()),
-                'B', copyWithWildCard(new ItemStack(IC2Items.getItem("advBattery").getItem()))
-        );
 
-        // Weapons
-        // Quantum Saber
-        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemWeaponQuantumSaber, 1),
-                "IA ", "IN ", "ILI",
-                'I', new ItemStack(IC2Items.getItem("iridiumPlate").getItem()),
-                'A', new ItemStack(IC2Items.getItem("advancedAlloy").getItem()),
-                'N', copyWithWildCard(new ItemStack(IC2Items.getItem("nanoSaber").getItem())),
-                'L', copyWithWildCard(new ItemStack(IC2Items.getItem("lapotronCrystal").getItem()))
-        );
 
-        // Armor
-        // Lappack
-        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemArmorLappack, 1),
-                "CAC", "LEL", "A A",
-                'C', new ItemStack(IC2Items.getItem("advancedCircuit").getItem()),
-                'A', new ItemStack(IC2Items.getItem("advancedAlloy").getItem()),
-                'L', copyWithWildCard(new ItemStack(IC2Items.getItem("lapotronCrystal").getItem())),
-                'E', copyWithWildCard(new ItemStack(IC2Items.getItem("energyPack").getItem()))
-        );
+		// Misc Items
+		// Iridium Block Cutting Blade
+		Recipes.advRecipes.addRecipe(
+				new ItemStack(ItemInit.itemArmorAdvancedJetpack, 1),
+				"AIA", "IDI", "AIA",
+				'A', IC2Items.getItem("advancedAlloy").copy(),
+				'I', IC2Items.getItem("iridiumPlate").copy(),
+				'D', new ItemStack(Items.diamond)
+		);
 
-        // Quantum Lappack
-        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemArmorQuantumLappack, 1),
-                "ICI", "LEL", "LIL",
-                'I', new ItemStack(IC2Items.getItem("iridiumPlate").getItem()),
-                'C', new ItemStack(ItemInit.itemMiscQuantumCircuit),
-                'L', copyWithWildCard(new ItemStack(IC2Items.getItem("lapotronCrystal").getItem())),
-                'E', copyWithWildCard(new ItemStack(ItemInit.itemArmorLappack))
-        );
+		// Magnetron
+		Recipes.advRecipes.addRecipe(
+				new ItemStack(ItemInit.itemArmorAdvancedJetpack, 1),
+				" C ", "CIC", "CPC",
+				'C', IC2Items.getItem("coil").copy(),
+				'I', new ItemStack(IC2Items.getItem("turningBlankIron").getItem(), 1, 209697),
+				'P', IC2Items.getItem("plateiron").copy()
+		);
 
-        // Advanced Jetpack
-        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemArmorAdvancedJetpack, 1),
-                "SES", "AJA", "SPS",
-                'S', new ItemStack(IC2Items.getItem("denseplatecopper").getItem(), 1, 5),
-                'E', copyWithWildCard(new ItemStack(IC2Items.getItem("energyCrystal").getItem())),
-                'A', new ItemStack(IC2Items.getItem("advancedCircuit").getItem()),
-                'J', copyWithWildCard(new ItemStack(IC2Items.getItem("electricJetpack").getItem())),
-                'P', copyWithWildCard(new ItemStack(IC2Items.getItem("energyPack").getItem()))
-        );
+		// Super Conductor
+		Recipes.advRecipes.addRecipe(
+				new ItemStack(ItemInit.itemArmorAdvancedJetpack, 1),
+				"GGG", "CIC", "GGG",
+				'G', IC2Items.getItem("glassFiberCableItem").copy(),
+				'C', IC2Items.getItem("carbonPlate").copy(),
+				'I', IC2Items.getItem("iridiumPlate").copy()
+		);
 
-        // Advanced Nano Chestplate
-        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemArmorAdvancedNanoChestplate, 1),
-                "FJF", "ANA", "FJF",
-                'F', new ItemStack(IC2Items.getItem("glassFiberCableItem").getItem(), 1, 9),
-                'J', copyWithWildCard(new ItemStack(ItemInit.itemArmorAdvancedJetpack)),
-                'A', new ItemStack(IC2Items.getItem("advancedCircuit").getItem()),
-                'N', copyWithWildCard(new ItemStack(IC2Items.getItem("nanoBodyarmor").getItem()))
-        );
+		// Quantum Circuit
+		Recipes.advRecipes.addRecipe(
+				new ItemStack(ItemInit.itemArmorAdvancedJetpack, 1),
+				"HHH", "GCG", "HHH",
+				'H', IC2Items.getItem("glassFiberCableItem").copy(),
+				'G', IC2Items.getItem("carbonPlate").copy(),
+				'C', IC2Items.getItem("iridiumPlate").copy()
+		);
 
-        // Misc
-        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemMiscQuantumCircuit, 1),
-                "FFF", "LIL", "FFF",
-                'F', new ItemStack(IC2Items.getItem("glassFiberCableItem").getItem(), 1, 9),
-                'L', new ItemStack(IC2Items.getItem("lithiumDust").getItem(), 1, 14),
-                'I', new ItemStack(IC2Items.getItem("iridiumPlate").getItem())
-        );
+		// Vajra Core
+		Recipes.advRecipes.addRecipe(
+				new ItemStack(ItemInit.itemArmorAdvancedJetpack, 1),
+				"HHH", "GCG", "HHH",
+				'H', IC2Items.getItem("glassFiberCableItem").copy(),
+				'G', IC2Items.getItem("carbonPlate").copy(),
+				'C', IC2Items.getItem("iridiumPlate").copy()
+		);
 
-        Recipes.advRecipes.addRecipe(new ItemStack(ItemInit.itemMiscQuantumCircuit, 1),
-                "FLF", "FIF", "FLF",
-                'F', new ItemStack(IC2Items.getItem("glassFiberCableItem").getItem(), 1, 9),
-                'L', new ItemStack(IC2Items.getItem("lithiumDust").getItem(),1 , 14),
-                'I', new ItemStack(IC2Items.getItem("iridiumPlate").getItem())
-        );
+
+		// Machine Recipes
+		// Lithium Cell
+		Recipes.cannerBottle.addRecipe(
+				new RecipeInputItemStack(IC2Items.getItem("fuelRod"), 1),
+				new RecipeInputItemStack(IC2Items.getItem("lithiumDust"), 1),
+				new ItemStack(IC2Items.getItem("reactorLithiumCell").getItem(), 1, 1)
+		);
+
+		// Tritium Cell
+		Recipes.cannerBottle.addRecipe(
+				new RecipeInputItemStack(IC2Items.getItem("TritiumCell"), 1),
+				new RecipeInputItemStack(new ItemStack(IC2Items.getItem("FluidCell").getItem()), 1),
+				getUniversalFluidCell("ic2hotwater", 1000)
+		);
+		// Enriched Glowstone
+		Recipes.cannerEnrich.addRecipe(
+				new RecipeInputItemStack(new ItemStack(Items.glowstone_dust, 1).copy()),
+				new RecipeInputItemStack(new ItemStack(IC2Items.getItem("FluidCell").getItem()), 1),
+				getUniversalFluidCell("ic2coolant", 1000)
+		);*/
     }
 
+
+	// Utility
     public static ItemStack copyWithWildCard(ItemStack itemStack) {
         ItemStack aux = itemStack.copy();
         Items.dye.setDamage(aux, 32767);
         return aux;
     }
+
+	public static ItemStack getUniversalFluidCell(String fluidName, int fluidAmount) {
+		ItemStack aux = IC2Items.getItem("FluidCell").copy();
+		((IFluidContainerItem)IC2Items.getItem("FluidCell").getItem()).fill(aux,
+				FluidRegistry.getFluidStack(fluidName, fluidAmount), true);
+		return aux;
+	}
 }

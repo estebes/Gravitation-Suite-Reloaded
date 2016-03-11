@@ -5,7 +5,7 @@ public class Reference {
     public static final String MOD_ID = "GraviSuiteReloaded";
     public static final String LOWERCASE_MOD_ID = MOD_ID.toLowerCase();
     public static final String MOD_NAME = "GraviSuite Reloaded";
-    public static final String VERSION = "1.7.10-0.9.1";
+    public static final String VERSION = "1.7.10-special";
     public static final String PROXY_CLIENT = "com.estebes.gravisuitereloaded.proxy.ClientProxy";
     public static final String PROXY_SERVER = "com.estebes.gravisuitereloaded.proxy.ServerProxy";
 
@@ -26,7 +26,9 @@ public class Reference {
     public static final String ADVANCED_NANO_CHESTPLATE_NAME = "ItemArmorAdvancedNanoChestplate";
     public static final String GRAVI_CHESTPLATE_NAME = "ItemArmorGraviChestplate";
 
+    // Resource
+    public static final String CUTTING_BLADE_IRIDIUM_NAME = "ItemCuttingBladeIridium";
+
     // Misc
     public static final String QUANTUM_CIRCUIT_NAME = "ItemMiscQuantumCircuit";
-    public static final int QUANTUM_CIRCUIT_STACKSIZE = 64;
 }
