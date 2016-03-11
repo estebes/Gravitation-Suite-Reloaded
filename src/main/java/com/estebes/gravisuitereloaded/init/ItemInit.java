@@ -9,9 +9,6 @@ import com.estebes.gravisuitereloaded.item.resource.ItemBlockCuttingBlade;
 import com.estebes.gravisuitereloaded.item.tool.*;
 import com.estebes.gravisuitereloaded.item.weapon.ItemWeaponQuantumSaber;
 import com.estebes.gravisuitereloaded.reference.Reference;
-import com.estebes.xtbxlib.ic2.item.resource.ItemResourceCuttingBlade;
-import com.estebes.xtbxlib.ic2.item.tool.ItemElectricToolDrillArea;
-import com.estebes.xtbxlib.ic2.item.tool.ItemElectricToolType;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @GameRegistry.ObjectHolder(Reference.MOD_ID)
